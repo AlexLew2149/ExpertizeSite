@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+
+	body {
+		margin: 0;
+		font-size: 30px;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.description{
+		font-family:game_over_cre1;
+		text-shadow:5px 5px 3px #785FF7;
+	}
+	form{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size: 35px;
+		padding: 15px;
+		margin-left:680px;
+	}
+
+	button{
+		margin-left:800px;
+	}
+
+	h1{
+		text-align: center;
+	}
+
+	#navbar {
+		overflow: hidden;
+		background-color: black;
+		border-bottom: ridge;
+		border-width:10px;
+		border-color: #785FF7;
+	}
+
+	#navbar a {
+		float: left;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+
+	#navbar a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
+	#navbar a.active {
+		background-color: #785FF7;
+		color: white;
+	}
+
+	.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+
+	.sticky + .content {
+		padding-top: 0px;
+	}
+	.CreateChallenge{
+		color:#ddd;
+	}
+
+	@font-face { font-family: game_over_cre1; src: url('gameovercre1.ttf'); }
+	@font-face { font-family: choose; src: url('Air Americana.ttf'); }
+
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+<script defer src="app.js"></script>
+<script>
+// Initialize Firebase
+	var config = {
+			apiKey: "AIzaSyD5EVnTBnMKyu-9qHBhBfGxDyZLTIbkQm4",
+			authDomain: "expertize-games.firebaseapp.com",
+			databaseURL: "https://expertize-games.firebaseio.com",
+			projectId: "expertize-games",
+			storageBucket: "expertize-games.appspot.com",
+			messagingSenderId: "839552852802"
+	};
+	firebase.initializeApp(config);
+</script>
+
+</head>
+
+<body style="background-color:black;">
+  <!-- navbar -->
+	<div id="navbar">
+		<img src="images/Expertize_Logo.png" width="646.866" height="350.38575" style="padding-left:350px;margin-bottom:-50px;margin-top:-60px;">
+		<a class="active" href="/homepage">Home</a>
+		<a href="CreateChallenge.html">Create</a>
+	</div>
+
+	<div class="CreateChallenge" id = "CreateChallenge">
+		<!--header -->
+	 	<header class="header">
+		 	<div class="container">
+		 		<div class="description ">
+		    		<h1>
+						Create your own challenge here:
+					</h1>
+		   	 	</div>
+		   </div>
+	  	</header>
+		<div class="createTrivia">
+			<form>
+	  	  	  <div class="form-row">
+			  		<div class="form-group col-md-4"> <!-- TODO: Change the size of the columns as necessary. You can look up bootstrap columns. It's very easy to implement and there are a lot of options. Genre, Name of the Show and Set should be drop down menus with options from our database -->
+	     				<label for="Genre">   Genre</label>
+	     	    		<input type="text" class="form-control" id="genreInput" placeholder="Comedy">
+	      	  		</div>
+	    	 		<div class="form-group col-md-4">
+	      				<label for="showName">   Name of the show</label>
+	     	   	 		<input type="text" class="form-control" id="nameInput" placeholder="The Office">
+	    	  		</div>
+	    	 		<div class="form-group col-md-4">
+	      				<label for="showName">  Set </label>
+	     	   	 		<input type="text" class="form-control" id="setInput" placeholder="Set One">
+	    	  		</div>
+	  	  	  </div>
+		  </form>
+		  <form class = "newField col-lg-8" id="newEntry">
+			  <form id="newEntryForm">
+			   	    <div class="col-md-10" id="questionInputDiv">
+			  	    	 	<label for="questionInput" id="questionInputLabel"> Question</label>
+			  	    	 	<input type="text" class="form-control" id="questionInput" placeholder="What's the name of the lead character? ">
+			  	  	</div>
+			  	  	<div class="col-md-10" id= "answerInputDiv">
+			  	    	  	<label for="answerInput" id="answerInputLabel"> Answer</label>
+			  	    	  	<input type="text" class="form-control" id="answerInput" placeholder="Michael Scott">
+			  	    </div>
+			  	 	<div class="col-md-10" id ="hintInputDIv">
+			  	      	 	<label for="hintInput" id="hintInputLabel"> Hint</label>
+			  	     	 	<input type="text" class="form-control" id="hintInput" placeholder="Weird sense of humor">
+			  		</div>
+			</form>
+		  <!-- </div> -->
+
+		   <div class="buttons" id = "buttons">
+		  	<div class="row">
+		    	<div class="col-sm-2">
+		      	  <button onclick="NewQuestion()" type="submit" class="btn btn-success">Submit</button>
+		    	</div>
+		    	<div class="col-sm-2">
+		      	  <button onClick="AddDiv()" class="btn btn-success">Add another</button>
+		    	</div>
+		 	</div>
+		   </div>
+		</div >
+	</div>
+</body>
+</html>

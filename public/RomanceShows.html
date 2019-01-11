@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<style>
+			body {
+				margin: 0;
+				font-size: 28px;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.wrapper{
+				display:table;
+				margin:0 auto;
+				overflow:hidden;
+			}
+
+			.left{
+				display:table-row;
+				background:red;
+			}
+
+			.center{
+				display:table-row;
+				margin:0 auto;
+				width:200px;
+				background:green;
+				height:50px;
+			}
+
+			.right{
+				display:table-row;
+				background:yellow;
+			}
+
+			.header {
+				background-color: #f1f1f1;
+				padding: 10px;
+				text-align: center;
+			}
+
+			#navbar {
+				overflow: hidden;
+				background-color: black;
+				border-bottom: ridge;
+				border-width:10px;
+				border-color: #785FF7;
+			}
+
+			#navbar a {
+				float: left;
+				display: block;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+			}
+
+			#navbar a:hover {
+				background-color: #ddd;
+				color: black;
+			}
+
+			#navbar a.active {
+				background-color: #785FF7;
+				color: white;
+			}
+
+			.sticky {
+				position: fixed;
+				top: 0;
+				width: 100%;
+			}
+
+			.sticky + .content {
+				padding-top: 0px;
+			}
+
+			@font-face { font-family: game_over_cre1; src: url('gameovercre1.ttf'); }
+			@font-face { font-family: choose; src: url('Air Americana.ttf'); }
+
+	 </style>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+	 <script defer src="app.js"></script>
+	 <script>
+	 	// Initialize Firebase
+	 		var config = {
+	 	  	  apiKey: "AIzaSyD5EVnTBnMKyu-9qHBhBfGxDyZLTIbkQm4",
+	 	  	  authDomain: "expertize-games.firebaseapp.com",
+	 	  	  databaseURL: "https://expertize-games.firebaseio.com",
+	 	  	  projectId: "expertize-games",
+	 	  	  storageBucket: "expertize-games.appspot.com",
+	 	  	  messagingSenderId: "839552852802"
+	 		};
+	 		firebase.initializeApp(config);
+	 	</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Romance shows</title>
+ </head>
+ <body style="background-color:black;">
+  <!-- navbar -->
+	<div id="navbar">
+	 <img src="images/Expertize_Logo.png" width="646.866" height="350.38575" style="padding-left:350px;margin-bottom:-50px;margin-top:-60px;">
+	 <a class="active" href="/homepage">Home</a>
+	 <a href="CreateChallenge.html">Create</a>
+	</div>
+
+			<h1 class="text-center" style="text-align:center;font-family:game_over_cre1;font-size:90px;color:#ddd;">Romance</h1>
+
+
+			<a href="/ShowPage?name=Riverdale&genre=Romance" style="padding-left:330px">
+			 <img src="images/Riverdale-The-CW.jpeg" width="20%" height="20%"></a>
+
+			<a href="/ShowPage?name=HIMYM&genre=Romance">
+				 <img src="images/himym.jpg" width="20%" height="20%"></a>
+
+
+			<a href="/ShowPage?name=One%20Tree%20Hill&genre=Romance">
+					<img src="images/oth.jpg" width="20%" height="20%"></a>
+
+
+	</div>
+
+</body>
+</html>
